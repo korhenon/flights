@@ -1,6 +1,5 @@
 package com.example.flights.ui.theme
 
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.ExperimentalTextApi
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
@@ -43,71 +42,60 @@ val inter = FontFamily(
 )
 
 // Set of Material typography styles to start with
-fun createFlightsTypography(textColor: Color) = FlightsTypography(
+val Typography = FlightsTypography(
     textXs = TextStyle(
         fontFamily = inter,
         fontSize = 12.sp,
-        lineHeight = 18.sp,
-        color = textColor
+        lineHeight = 18.sp
     ),
     textSm = TextStyle(
         fontFamily = inter,
         fontSize = 14.sp,
-        lineHeight = 20.sp,
-        color = textColor
+        lineHeight = 20.sp
     ),
     textMd = TextStyle(
         fontFamily = inter,
         fontSize = 16.sp,
-        lineHeight = 24.sp,
-        color = textColor
+        lineHeight = 24.sp
     ),
     textLg = TextStyle(
         fontFamily = inter,
         fontSize = 18.sp,
-        lineHeight = 28.sp,
-        color = textColor
+        lineHeight = 28.sp
     ),
     textXl = TextStyle(
         fontFamily = inter,
         fontSize = 20.sp,
-        lineHeight = 30.sp,
-        color = textColor
+        lineHeight = 30.sp
     ),
     displayXs = TextStyle(
         fontFamily = inter,
         fontSize = 24.sp,
-        lineHeight = 32.sp,
-        color = textColor
+        lineHeight = 32.sp
     ),
     displaySm = TextStyle(
         fontFamily = inter,
         fontSize = 30.sp,
-        lineHeight = 38.sp,
-        color = textColor
+        lineHeight = 38.sp
     ),
     displayMd = TextStyle(
         fontFamily = inter,
         fontSize = 36.sp,
-        lineHeight = 44.sp,
-        color = textColor
+        lineHeight = 44.sp
     ),
     displayLg = TextStyle(
         fontFamily = inter,
         fontSize = 48.sp,
-        lineHeight = 60.sp,
-        color = textColor
+        lineHeight = 60.sp
     ),
     displayXl = TextStyle(
         fontFamily = inter,
         fontSize = 60.sp,
-        lineHeight = 72.sp,
-        color = textColor
+        lineHeight = 72.sp
     ),
     display2xl = TextStyle(
         fontFamily = inter,
         fontSize = 72.sp,
-        lineHeight = 90.sp,
-        color = textColor
+        lineHeight = 90.sp
     )
 )

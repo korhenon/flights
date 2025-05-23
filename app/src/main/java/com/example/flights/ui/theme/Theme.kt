@@ -10,11 +10,17 @@ import androidx.compose.ui.text.TextStyle
 @Immutable
 data class FlightsColors(
     val primary: Color,
+    val primary100: Color,
+    val primary200: Color,
+    val primary400: Color,
     val background: Color,
     val error: Color,
     val warning: Color,
     val success: Color,
-    val onBackground: Color
+    val onBackground: Color,
+    val loadingShadow: Color,
+    val onPrimary: Color,
+    val onPrimarySubText: Color
 )
 
 @Immutable
@@ -35,11 +41,17 @@ data class FlightsTypography(
 val LocalFlightsColors = staticCompositionLocalOf {
     FlightsColors(
         primary = Color.Unspecified,
+        primary100 = Color.Unspecified,
+        primary200 = Color.Unspecified,
+        primary400 = Color.Unspecified,
         background = Color.Unspecified,
         error = Color.Unspecified,
         warning = Color.Unspecified,
         success = Color.Unspecified,
-        onBackground = Color.Unspecified
+        onBackground = Color.Unspecified,
+        loadingShadow = Color.Unspecified,
+        onPrimary = Color.Unspecified,
+        onPrimarySubText = Color.Unspecified
     )
 }
 
@@ -63,13 +75,19 @@ val LocalFlightsTypography = staticCompositionLocalOf {
 fun FlightsTheme(content: @Composable () -> Unit) {
     val colors = FlightsColors(
         primary = Primary,
+        primary100 = Primary100,
+        primary200 = Primary200,
+        primary400 = Primary400,
         background = Color.White,
         error = Error,
         warning = Warning,
         success = Success,
-        onBackground = Gray800
+        onBackground = Gray800,
+        loadingShadow = LightLoadingShadow,
+        onPrimary = Color.White,
+        onPrimarySubText = Gray100
     )
-    val typography = createFlightsTypography(colors.onBackground)
+    val typography = Typography
     CompositionLocalProvider(
         LocalFlightsColors provides colors,
         LocalFlightsTypography provides typography,
