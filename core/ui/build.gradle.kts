@@ -1,23 +1,17 @@
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.hilt)
-    alias(libs.plugins.ksp)
 }
 
 android {
-    namespace = "com.example.flights"
+    namespace = "com.example.core.ui"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.flights"
         minSdk = 31
-        targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -35,9 +29,6 @@ android {
     }
     kotlinOptions {
         jvmTarget = "11"
-    }
-    buildFeatures {
-        compose = true
     }
 }
 
@@ -57,12 +48,6 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-    // Dagger/Hilt
-    implementation(libs.hilt.android)
-    ksp(libs.hilt.android.compiler)
-    // Splash Screen API
-    implementation(libs.androidx.core.splashscreen)
 
-    implementation(project(":core:ui"))
-    testImplementation(project(":core:common"))
+    implementation(project(":core:common"))
 }
