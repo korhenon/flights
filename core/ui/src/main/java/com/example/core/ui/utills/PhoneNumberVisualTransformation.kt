@@ -7,7 +7,7 @@ import androidx.compose.ui.text.input.VisualTransformation
 import com.example.core.common.PhoneNumberFormatter
 import kotlin.math.max
 
-class PhoneNumberVisualTransformation : VisualTransformation {
+public class PhoneNumberVisualTransformation : VisualTransformation {
     override fun filter(text: AnnotatedString): TransformedText {
         val out = PhoneNumberFormatter(text.text)
         return TransformedText(

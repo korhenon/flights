@@ -14,7 +14,7 @@ import com.example.core.ui.utills.ButtonShape
 import com.example.core.ui.utills.ButtonVariant
 
 @Composable
-fun BigButton(
+public fun BigButton(
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
     enabled: Boolean = true,
