@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    id("kotlin-kapt")
+    id("com.google.devtools.ksp")
     id("com.google.dagger.hilt.android")
 }
 
@@ -59,11 +59,7 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
     // Dagger/Hilt
     implementation("com.google.dagger:hilt-android:2.51.1")
-    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
+    ksp("com.google.dagger:hilt-android-compiler:2.51.1")
     // Splash Screen API
     implementation("androidx.core:core-splashscreen:1.0.1")
-}
-
-kapt {
-    correctErrorTypes = true
 }
