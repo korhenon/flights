@@ -64,5 +64,4 @@ dependencies {
     implementation(libs.androidx.core.splashscreen)
 
     implementation(project(":core:ui"))
-    testImplementation(project(":core:common"))
 }

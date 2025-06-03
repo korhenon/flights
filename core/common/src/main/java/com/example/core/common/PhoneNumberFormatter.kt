@@ -1,7 +1,6 @@
 package com.example.core.common
 
-
-class PhoneNumberFormatter(private val string: String) {
+public class PhoneNumberFormatter(private val string: String) {
     val formatted = formatAsPhoneNumber()
     val countryCode =
         if (' ' in formatted) formatted.split(' ').getOrNull(0)?.replace("+", "") else null
@@ -11,10 +10,10 @@ class PhoneNumberFormatter(private val string: String) {
     val isCorrectPhoneNumber =
         countryCode != null && areaCode?.length == 3 && telephonePrefix?.length == 3 && lineNumber.length == 4
 
-    fun countryFlag(mapping: Map<String, Int>, undefined: Int) = when (countryCode) {
+    val countryFlag = when (countryCode) {
         null -> null
-        in mapping.keys -> mapping[countryCode]
-        else -> undefined
+        in CountryCodesToFlagsMapping.keys -> CountryCodesToFlagsMapping[countryCode]
+        else -> R.drawable.flag_undefined
     }
 
     companion object {
@@ -228,6 +227,10 @@ class PhoneNumberFormatter(private val string: String) {
             "996",
             "997",
             "998"
+        )
+        val CountryCodesToFlagsMapping = mapOf(
+            "1" to R.drawable.flag_usa,
+            "7" to R.drawable.flag_russia
         )
     }
 
