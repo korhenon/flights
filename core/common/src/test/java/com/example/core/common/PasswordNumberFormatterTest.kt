@@ -1,6 +1,5 @@
-package com.example.flights
+package com.example.core.common
 
-import com.example.core.common.PhoneNumberFormatter
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
